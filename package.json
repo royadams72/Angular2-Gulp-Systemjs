@@ -1,5 +1,9 @@
 {
   "name": "angular2-production-wokrflow",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
   "version": "1.0.0",
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",

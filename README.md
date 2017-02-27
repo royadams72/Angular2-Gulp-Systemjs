@@ -8,6 +8,8 @@ Angular.io have quick start tutorial on https://angular.io/docs/ts/latest/quicks
 3. Bundle everything to dist folder with generated hash for browser cache resync
 4. Copy everything inside assets folder to dist folder
 
+##NEED TO UPLOAD HTML COMPONENT FILES/TEMPLATES
+
 First let look at angular 2 quickstart index.html
 
 ```html
@@ -62,9 +64,9 @@ Next step is to move scripts loading to body bottom
     <!-- endbuild -->
   </body>
   ```
-  
-  Ok so, by now we still don't have any bundle step and system.js is still loaded from node_modules path. Don't worry because it's time to create self executing SystemJs bundles so it can be run without any external dependencies. Our mission is to run gulp task wich can replace index.html file with bundled files for production use and copy all this to dist folder. We should have somethink like this:
-  
+
+  Ok so, by now we still don't have any bundle step and system.js is still loaded from node_modules path. Don't worry because it's time to create self executing SystemJs bundles so it can be run without any external dependencies. Our mission is to run gulp task which can replace index.html file with bundled files for production use and copy all this to dist folder. We should have something like this:
+
   *dist/index.html*
   ```html
   <!DOCTYPE html>
@@ -89,4 +91,3 @@ We can do bundling step using SystemJs builder which take care of all bundling s
 1. Why you use gulp shell to compile typescript files instead of using gulp-typescript? Because by running tsc command I'm always sure typescript compiler use tsconfig.json settings. gulp-typescript ignore some of them. Example is sourcemaps, even if you set sourceMaps: true in tsconfig.json file, gulp-typescript will ingore this setting.
 
 2. Does angular html templates is also bundled? Yes. We can use power of SystemJs plugin like to load html into javascript so it can be bundled.
-
